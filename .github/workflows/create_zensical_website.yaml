@@ -10,6 +10,7 @@ on:
       - .github/workflows/create_zensical_website.yaml
       - 'docs/**'
       - zensical.toml
+  workflow_dispatch:
 
 permissions:
   contents: read
