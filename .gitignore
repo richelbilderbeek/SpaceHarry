@@ -37,3 +37,4 @@ SpaceHarry
 *.pro.user
 site/
 docs/game/
+__pycache__/
