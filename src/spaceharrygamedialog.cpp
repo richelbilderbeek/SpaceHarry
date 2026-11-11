@@ -53,6 +53,10 @@ SpaceHarryGameDialog::SpaceHarryGameDialog(QWidget *parent)
     mLife(1.0)
 {
   setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+#ifdef Q_OS_WASM
+  //The web page is the window: no title bar
+  setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
+#endif
   setFocusPolicy(Qt::StrongFocus);
   setMinimumSize(491, 452);
   setWindowState(Qt::WindowMaximized);
@@ -241,9 +245,11 @@ void SpaceHarryGameDialog::GameOver()
   mTimerGame.stop();
   mTimerKeyPress.stop();
   mKeys.clear();
-  SpaceHarryGameOverDialog d(this);
-  d.exec();
-  accept();
+  SpaceHarryGameOverDialog * const d = new SpaceHarryGameOverDialog(this);
+  d->setAttribute(Qt::WA_DeleteOnClose);
+  //Queued, as accepting may delete this dialog, including the game over dialog
+  connect(d, &QDialog::finished, this, &QDialog::accept, Qt::QueuedConnection);
+  d->open();
 }
 
 void SpaceHarryGameDialog::OnKeyPressTimer()

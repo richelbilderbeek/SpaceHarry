@@ -17,6 +17,7 @@
 */
 // From http://www.richelbilderbeek.nl
 #include <QApplication>
+#include <QScreen>
 
 #include "spaceharrymenudialog.h"
 
@@ -25,6 +26,13 @@ int main(int argc, char *argv[])
   QApplication a(argc, argv);
   QApplication::setApplicationName("Space Harry");
   SpaceHarryMenuDialog w;
+#ifdef Q_OS_WASM
+  //Put the menu in the middle of the web page
+  const QRect screen = w.screen()->availableGeometry();
+  w.move(
+    screen.x() + (screen.width()  - w.width())  / 2,
+    screen.y() + (screen.height() - w.height()) / 2);
+#endif
   w.show();
   return a.exec();
 }

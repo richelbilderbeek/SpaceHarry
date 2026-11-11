@@ -5,6 +5,8 @@ written in C++ using the Qt library.
 
 Shoot the skulls before they shoot you!
 
+[Play Space Harry in your browser](play.md).
+
 ![The menu](pics/menu.png)
 
 ## Gameplay

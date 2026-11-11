@@ -46,6 +46,10 @@ SpaceHarryMenuDialog::SpaceHarryMenuDialog(QWidget *parent)
   setWindowTitle("Space Harry (C) 2007 Richel Bilderbeek");
   setFixedSize(501, 502);
   setMouseTracking(true);
+#ifdef Q_OS_WASM
+  //The web page is the window: no title bar
+  setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
+#endif
 }
 
 void SpaceHarryMenuDialog::paintEvent(QPaintEvent *)
@@ -87,14 +91,18 @@ void SpaceHarryMenuDialog::mousePressEvent(QMouseEvent *event)
   else if (mRectQuit.contains(p)) close();
 }
 
+//Dialogs are opened without QDialog::exec, as a nested event loop
+//is not supported by Qt for WebAssembly
 void SpaceHarryMenuDialog::OnStart()
 {
-  SpaceHarryGameDialog d(this);
-  d.exec();
+  SpaceHarryGameDialog * const d = new SpaceHarryGameDialog(this);
+  d->setAttribute(Qt::WA_DeleteOnClose);
+  d->open();
 }
 
 void SpaceHarryMenuDialog::OnAbout()
 {
-  SpaceHarryAboutDialog d(this);
-  d.exec();
+  SpaceHarryAboutDialog * const d = new SpaceHarryAboutDialog(this);
+  d->setAttribute(Qt::WA_DeleteOnClose);
+  d->open();
 }

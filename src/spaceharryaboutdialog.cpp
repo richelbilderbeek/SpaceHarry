@@ -43,6 +43,10 @@ SpaceHarryAboutDialog::SpaceHarryAboutDialog(QWidget *parent)
   setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
   setWindowTitle("Space Harry (C) 2007 Richel Bilderbeek");
   setFixedSize(758, 585);
+#ifdef Q_OS_WASM
+  //The web page is the window: no title bar
+  setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint);
+#endif
 
   const QFont bigFont = CreateCourierFont(64, true, true);
   const QFont smallFont = CreateCourierFont(16, false);
