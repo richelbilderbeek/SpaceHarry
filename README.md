@@ -6,6 +6,8 @@ Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
 
 The game SpaceHarry, a simple 'Space Harrier' clone, using the C++ Qt library.
 
+- [Go to the nicely rendered website](https://richelbilderbeek.github.io/SpaceHarry/)
+
 Originally written in 2007 using the C++ VCL library.
 
 ## Build
