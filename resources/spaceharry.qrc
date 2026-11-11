@@ -1,0 +1,16 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+  <qresource prefix="/">
+    <file>about.png</file>
+    <file>bullet_blue.png</file>
+    <file>bullet_harry.png</file>
+    <file>collision_blue.png</file>
+    <file>collision_green.png</file>
+    <file>enemy_skull.png</file>
+    <file>game_over.png</file>
+    <file>harry.png</file>
+    <file>harry_transparent.png</file>
+    <file>menu_background.png</file>
+    <file>menu_harry.png</file>
+  </qresource>
+</RCC>

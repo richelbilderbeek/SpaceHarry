@@ -1,13 +1,18 @@
-language: generic
-dist: bionic
+language: cpp
+dist: focal
 
 install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq qtbase5-dev
   # Check dead links
   - sudo apt-get install -qq npm
   - npm config set strict-ssl false
   - sudo npm install -g markdown-link-check
 
 script:
+  # Build the game
+  - qmake SpaceHarry.pro
+  - make
   # Check dead links
   - rm .travis.yml
   - ./scripts/check_dead_links

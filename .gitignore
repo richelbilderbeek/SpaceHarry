@@ -26,3 +26,12 @@
 *.exe
 *.out
 *.app
+
+# Build output
+build/
+Makefile
+.qmake.stash
+moc_*
+qrc_*
+SpaceHarry
+*.pro.user

@@ -1,11 +1,6 @@
-//---------------------------------------------------------------------------
 /*
   Space Harry, a simple 'Space Harrier' clone
-<<<<<<< HEAD
-  Copyright (C) 2007  Richèl Bilderbeek
-=======
   Copyright (C) 2007  Richel Bilderbeek
->>>>>>> develop
 
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -20,13 +15,41 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-//---------------------------------------------------------------------------
 // From http://www.richelbilderbeek.nl
-//---------------------------------------------------------------------------
-#pragma hdrstop
+#ifndef SPACEHARRYSTRUCTS_H
+#define SPACEHARRYSTRUCTS_H
 
-#include "UnitSpaceHarryStructs.h"
+class QImage;
 
-//---------------------------------------------------------------------------
+struct Bullet
+{
+  double x = 0.0, y = 0.0, z = 0.0;
+  double dX = 0.0, dY = 0.0, dZ = 0.0;
+  const QImage * image = nullptr;
+};
 
-#pragma package(smart_init)
+struct Enemy
+{
+  double x = 0.0, y = 0.0, z = 0.0;
+  int nHitpoints = 1;
+  const QImage * image = nullptr;
+};
+
+struct Collision
+{
+  double x = 0.0, y = 0.0, z = 0.0;
+  int timeLength = 0; //Time steps to self destruct
+  int nTicks = 0;
+  const QImage * image = nullptr;
+};
+
+struct Sprite
+{
+  double x = 0.0, y = 0.0, z = 0.0;
+  const QImage * image = nullptr;
+};
+
+//Sprites furthest away (highest z) are drawn first
+inline bool operator<(const Sprite& lhs, const Sprite& rhs) { return lhs.z > rhs.z; }
+
+#endif // SPACEHARRYSTRUCTS_H
