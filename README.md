@@ -16,7 +16,7 @@ Requires Qt 5.10+ or Qt 6 (Widgets module) and a C++17 compiler.
 
 Using CMake:
 
-```
+```text
 cmake -S . -B build
 cmake --build build
 ./build/SpaceHarry
@@ -24,7 +24,7 @@ cmake --build build
 
 Using qmake:
 
-```
+```text
 qmake SpaceHarry.pro
 make
 ./SpaceHarry
