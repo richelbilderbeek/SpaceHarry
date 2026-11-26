@@ -8,7 +8,7 @@ name: Create Zensical website
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - .github/workflows/create_zensical_website.yaml
       - 'docs/**'

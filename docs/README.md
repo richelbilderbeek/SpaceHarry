@@ -40,4 +40,4 @@ In 2026 it was converted to use the C++ Qt library.
 ![About](pics/about.png)
 
 Space Harry is licensed under the
-[GPL 3.0](https://github.com/richelbilderbeek/SpaceHarry/blob/master/LICENSE).
+[GPL 3.0](https://github.com/richelbilderbeek/SpaceHarry/blob/main/LICENSE).

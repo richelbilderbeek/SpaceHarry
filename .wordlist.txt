@@ -1,11 +1,12 @@
 Bilderbeek
 CMake
-Gameplay
 GPL
-lifebar
-qmake
+Gameplay
 Richel
 SpaceHarry
+VCL
+codecov
+lifebar
+qmake
 th
 toc
-VCL

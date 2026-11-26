@@ -1,8 +1,6 @@
 # SpaceHarry
 
-Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
----|---
-`master`|[![Build Status](https://travis-ci.org/richelbilderbeek/SpaceHarry.svg?branch=master)](https://travis-ci.org/richelbilderbeek/SpaceHarry)
+[![codecov](https://codecov.io/gh/richelbilderbeek/SpaceHarry/branch/main/graph/badge.svg)](https://codecov.io/gh/richelbilderbeek/SpaceHarry)
 
 The game SpaceHarry, a simple 'Space Harrier' clone, using the C++ Qt library.
 
