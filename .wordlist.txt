@@ -5,6 +5,7 @@ Gameplay
 Richel
 SpaceHarry
 VCL
+Zensical
 codecov
 lifebar
 qmake
